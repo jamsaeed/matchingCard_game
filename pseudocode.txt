@@ -1,0 +1,21 @@
+before making the game i will be making 4 html files one for the main page the three others for three different levels also create three javascript files for each html file i haven't given css much thought , for now i will be working in one css file for now my memorycard game/matching card game will be  a flower spring garden theme.
+
+
+
+
+I will br making 4 htmls first one the main page (play game) scecond html  is the first page with only four cards second html 6 cards the last and the fourth html will be 10 cards or less
+in the first htnl index.html i will link the first level easy html
+in html : add 4 divs with calsses and ids
+
+
+
+starting my matching cards game in the game I'll have 3 levels 3 levels in the same html
+2 html first is for starting the game it begins as start playing game (flower theme game)
+
+use add listeners if else statement functions variables
+queryselectors
+ arrays global variables divs u
+ in Html divs class id for loop
+
+html : divs main class id
+

@@ -1,3 +1,65 @@
 body {
-  background-color: blueviolet;
+  background-color: rgb(200, 255, 198);
+  margin: 0;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+/* * display: grid; */
+/* width: 100vh; viewport height it causes issues cuz it takes the width of the screen esp wide screen only height */
+
+.game-container {
+  background-color: rgb(250, 255, 192);
+  width: 400px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.cards {
+  background-color: rgb(198, 244, 255);
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  padding: 1em;
+}
+/* .cards {
+  background-color: rgb(132, 208, 238);
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .container {
+  background-color: rgb(251, 250, 223);
+  justify-content: center;
+  text-align: center;
+  height: 300px;
+  width: 300px;
+  border: 80px;
+  margin: 50px;
+  padding: 50px;
+}
+
+/* .container {
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  margin: 5px;
+  padding: 6px;
+} */
+
+/* .cards {
+  background-color: rgb(158, 252, 255);
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+} */
