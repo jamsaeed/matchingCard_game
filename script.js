@@ -25,35 +25,32 @@ const memoryCard = [
   "./images/image0.jpeg",
   "./images/image1.jpg",
   "./images/image1.jpg",
-  "./images/backimage.jpeg",
+  "./images/image2.jpeg",
+  "./images/image2.jpeg",
+  "./images/image3.jpg",
+  "./images/image3.jpg",
+  "./images/image4.jpg",
+  "./images/image4.jpg",
 ]
-let cardVarr = [...memoryCard, ...memoryCard]
-//   console.log(cardVarr)
 
-let cards
-for (let i = 0; i < 4; i++) {
-  cards = document.createElement("div")
+let cards = []
+for (let i = 0; i < memoryCard.length; i++) {
+  const container = document.createElement("div")
+  container.classList.add("cards")
   const img = document.createElement("img")
-  cards.innerHTML = `<img src="./images/backimage.jpeg">`
-  img.setAttribute(
-    "src",
-    memoryCard[[Math.floor(Math.random() * memoryCard.length)]]
-  )
-  //hidden() like this?
+  img.setAttribute("src", `./images/backimage.jpeg`)
+  // img.setAttribute("src", `${memoryCard[i]}`)
+  gameContainer.appendChild(container)
+  container.appendChild(img)
+  cards.push(img)
 
-  //cards.style.display ="hide()"   ???
-  cards.appendChild(img)
+  cards[i].addEventListener("click", () => {
+    img.setAttribute("src", `${memoryCard[i]}`)
+    console.log("clicked")
+  })
 
-  console.log("cards", cards)
-  gameContainer.appendChild(cards)
+  //if statement
 }
-
-cards.addEventListener("click", () => {
-  cards.document.querySelector(`./images/img${i}.jpeg`) //="block"
-})
-
-//use hide() and block()
-
-// block.addEventListener("click", () => {
-//   flipCard(block)
-// })
+console.log(cards)
+console.log(gameContainer)
+console.log(cards.length)

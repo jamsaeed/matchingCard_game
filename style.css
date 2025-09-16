@@ -2,131 +2,47 @@ body {
   background: url(./images/background.jpeg);
   background-color: rgb(200, 255, 198);
   margin: 0;
-  height: 100vh;
-  text-align: center;
   background-position: center;
   background-size: cover;
-  /* justify-content: center;
-  align-items: center; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
-/* * display: grid; */
-/* width: 100vh; viewport height it causes issues cuz it takes the width of the screen esp wide screen only height */
-
+.text {
+  margin: 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
 .game-container {
   background-color: rgb(201, 255, 199);
-  width: 400px;
+  width: 1300px;
   height: 500px;
-  display: flex;
+  margin-top: 20px;
+  display: grid;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   border: 10px solid rgb(201, 255, 199);
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.cards {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
+  margin-left: 90px;
 }
 
 img {
   height: 200px;
   width: 200px;
 }
-
-.level-nav ul {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.level-nav li {
-  display: inline-block;
-  list-style-type: none;
-}
-
-.level-nav li:not(:last-of-type) {
-  margin-right: 1rem;
-}
-
-.level-nav a {
-  display: block;
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 1rem;
-  overflow: hidden;
-  transition: all 400ms ease;
-}
-
-.level-nav a:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50%;
-  height: 200%;
-  width: 200%;
-  background-color: #ffd7f8;
-  transition: all 400ms ease;
-  transform: translateY(100%) rotate(0deg);
-  z-index: -1;
-}
-
-.level-nav a:hover {
-  color: #42532b;
-}
-
-.level-nav a:hover:after {
-  transform: translateY(-25%) rotate(10deg);
-}
-
-block {
-  height: 175px;
-  width: 175px;
-  position: relative;
-}
-/* image {
-  height: 60px;
-  width: 60px;
-} */
-
-/* grid-template-columns: repeat(2, auto);
-  gap: 10px;
-  padding: 10px;
-  justify-content: center; */
-/* .cards {
-  background-color: rgb(198, 244, 255);
-  display: flex;
-  flex-direction: row;
-  gap: 1em;
-  padding: 1em;
-} */
-/* .cards {
-  background-color: rgb(132, 208, 238);
-  height: 100px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-/* .container {
-  background-color: rgb(251, 250, 223);
-  justify-content: center;
-  text-align: center;
-  height: 300px;
-  width: 300px;
-  border: 80px;
-  margin: 50px;
-  padding: 50px;
-}
-
-/* .container {
-  background-color: aquamarine;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  margin: 5px;
-  padding: 6px;
-} */
-
-/* .cards {
-  background-color: rgb(158, 252, 255);
-  justify-content: center;
-  height: 150px;
-  width: 150px;
-} */
