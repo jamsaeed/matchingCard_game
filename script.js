@@ -2,36 +2,58 @@
 // let match = null
 
 // console.log(matchingCards)
+
 let score = 0
+let timer = 0
 let firstCard = null
 let secondCard = null
 let gameBoard = false
+const rePlay = document.getElementById("play-button")
 let gameContainer = document.querySelector(".game-container")
 let timeDisplay = document.querySelector(".counting-time")
 let scoreDisplay = document.querySelector(".cards-score")
+
+//let firstCard , secondCard=
 // let matchingCards = document.querySelector(".cards") we don't need another variable for cards we have all the cards inside game container
 
-console.log("gameContainer", gameContainer)
-let memoryCard = ["Flower", "Flower", "Tulip", "Tulip"]
-let block
+//under this works uncomment
+// console.log("gameContainer", gameContainer)
 
+// const gameCards = () => {
+const memoryCard = [
+  "./images/image0.jpeg",
+  "./images/image0.jpeg",
+  "./images/image1.jpg",
+  "./images/image1.jpg",
+  "./images/backimage.jpeg",
+]
+let cardVarr = [...memoryCard, ...memoryCard]
+//   console.log(cardVarr)
+
+let cards
 for (let i = 0; i < 4; i++) {
-  block = document.createElement("div")
-  block.innerHTML = memoryCard[[Math.floor(Math.random() * 4)]] //.Math.floor(Math.random() * (i + 1)) //. Math.floor(Math.random())  maybe//memoryCard[1] //i //memoryCard[0] random.math
-  console.log("block", block)
-  gameContainer.appendChild(block)
+  cards = document.createElement("div")
+  const img = document.createElement("img")
+  cards.innerHTML = `<img src="./images/backimage.jpeg">`
+  img.setAttribute(
+    "src",
+    memoryCard[[Math.floor(Math.random() * memoryCard.length)]]
+  )
+  //hidden() like this?
+
+  //cards.style.display ="hide()"   ???
+  cards.appendChild(img)
+
+  console.log("cards", cards)
+  gameContainer.appendChild(cards)
 }
 
-// shuffle(memoryCard)
-// console.log(memoryCard)
+cards.addEventListener("click", () => {
+  cards.document.querySelector(`./images/img${i}.jpeg`) //="block"
+})
 
-// matchingCards.addEventListener("click", () => {
+//use hide() and block()
 
+// block.addEventListener("click", () => {
+//   flipCard(block)
 // })
-
-// xxx doesn't work
-// for (let i = 0; i < matchingCards.length; i++ )xxxx still wrong
-
-//   score+= 10
-//   scoreDisplay.innerText = score
-//Math.random(memoryCard) it is not the best way to write it this way it'll give me a random number not random strings or one of my arrays

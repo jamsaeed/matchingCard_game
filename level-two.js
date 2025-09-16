@@ -8,20 +8,30 @@ let scoreDisplay = document.querySelector(".cards-score")
 
 console.log("gameContainer", gameContainer)
 let memoryCard = [
-  "Flower",
-  "Flower",
-  "Tulip",
-  "Tulip",
-  "cactus",
-  "cactus",
-  "lavender",
-  "lavender",
+  "./images/flower.jpeg",
+  "./images/tulips.jpg",
+  "./images/Lavender.jpg",
+  "./images/cactus.jpeg",
 ]
+let cardVarr = [...memoryCard, ...memoryCard]
 let block
 
 for (let i = 0; i < 8; i++) {
   block = document.createElement("div")
-  block.innerHTML = memoryCard[[Math.floor(Math.random() * 8)]]
+  const img = document.createElement("img")
+  img.setAttribute(
+    "src",
+    memoryCard[[Math.floor(Math.random() * memoryCard.length)]]
+  )
+  block.appendChild(img)
+
   console.log("block", block)
   gameContainer.appendChild(block)
 }
+
+// for (let i = 0; i < 8; i++) {
+//   block = document.createElement("div")
+//   block.innerHTML = memoryCard[[Math.floor(Math.random() * 8)]]
+//   console.log("block", block)
+//   gameContainer.appendChild(block)
+// }
