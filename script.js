@@ -23,17 +23,18 @@ let scoreDisplay = document.querySelector(".cards-score")
 const memoryCard = [
   "./images/image0.jpeg",
   "./images/image0.jpeg",
-  "./images/image1.jpg",
-  "./images/image1.jpg",
+  "./images/image1.jpeg",
+  "./images/image1.jpeg",
   "./images/image2.jpeg",
   "./images/image2.jpeg",
-  "./images/image3.jpg",
-  "./images/image3.jpg",
-  "./images/image4.jpg",
-  "./images/image4.jpg",
+  "./images/image3.jpeg",
+  "./images/image3.jpeg",
+  "./images/image4.jpeg",
+  "./images/image4.jpeg",
 ]
 
 let cards = []
+let flippedCards = []
 for (let i = 0; i < memoryCard.length; i++) {
   const container = document.createElement("div")
   container.classList.add("cards")
@@ -43,14 +44,28 @@ for (let i = 0; i < memoryCard.length; i++) {
   gameContainer.appendChild(container)
   container.appendChild(img)
   cards.push(img)
+  cards.sort(() => Math.random() - 0.5)
+  //random .sort(() => Math.random() - 0.5)
 
   cards[i].addEventListener("click", () => {
     img.setAttribute("src", `${memoryCard[i]}`)
     console.log("clicked")
   })
-
   //if statement
+  flippedCards.push(img)
+
+  if (flippedCards.length === 2) {
+    if (flippedCards[0].src === flippedCards[1].src) {
+      //score += 10
+    } else {
+      flippedCards[0].setAttribute("src", "./images/backimage.jpeg")
+      flippedCards[1].setAttribute("src", "./images/backimage.jpeg")
+    }
+    // reset for next turn make the array empty
+  }
 }
-console.log(cards)
-console.log(gameContainer)
-console.log(cards.length)
+
+//  document.getElementById("play-button").reset()
+// console.log(cards)
+// console.log(gameContainer)
+// console.log(cards.length)
