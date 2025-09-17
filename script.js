@@ -91,17 +91,30 @@ const reSet = () => {
   timer = 60
 }
 
-const playAgain = () => {
-  rePlay.addEventListener("click", () => {
-    reSet()
-    score = 0
-    scoreDisplay.innerText = score
-  })
+rePlay.addEventListener("click", () => {
+  reSet()
+  score = 0
+  scoreDisplay.innerText = score
+})
 
-  //flip the cards back
-  // shuffle cards ??=> const shuffleCards = memoryCard.sort(() => Math.random() - 0.5)
-}
+// const playAgain = () => {
+//   rePlay.addEventListener("click", () => {
+//     reSet()
+//     score = 0
+//     scoreDisplay.innerText = score
+//   })
+//   //flip the cards back
+//   document.querySelector(".play-button").forEach((card)=>){
+//     cards.classList.remove("flip")
+//   }
+// const shuffleCards = memoryCard.sort(() => Math.random() - 0.5)
 
+// }
+// playAgain()
+
+// cards.forEach(card =>{
+// card.classList.remove("flipped" , "matched")
+// })
 // rePlay.addEventListener("click", () => {
 //   reSet()
 //   score = 0
