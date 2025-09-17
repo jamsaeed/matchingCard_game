@@ -65,7 +65,7 @@ h3 {
   align-items: center;
   border: 10px solid rgb(255, 192, 216);
   grid-template-columns: repeat(5, 1fr);
-  border-radius: 26px;
+  border-radius: 30px;
 }
 
 .cards {
@@ -85,4 +85,12 @@ h3 {
 img {
   height: 200px;
   width: 200px;
+}
+
+.button {
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+  animation: 2s linear infinite blink;
 }
