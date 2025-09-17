@@ -16,7 +16,8 @@
 
 ### what should the game look like
  ### **image header 1**
-![game-final-result](https://imgur.com/vSdjkoX)
+![game-final-result](./images/final%20look%20(2).png)
+
 
 
 <!--
