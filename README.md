@@ -8,7 +8,7 @@
 ***
 ***
 ### description
-### *Making my first ever game with html,css, and js  after 2 weeks of learning basic coding. Making A flower themed Memorycard game. *
+### *Making my first ever game with html,css, and js  after 2 weeks of learning basic coding. Making A flower themed Memorycard game. the game is about matching two cards with matching flower it is a classic game played by laying a set of cards face down and taking turns to flip over two cards at a time to find a matching pair. If the cards match, the player keeps the pair and takes another turn; if they don't match, they are turned back face down*
 
 ### apps used
 * **github**
@@ -23,6 +23,7 @@
 * **mdn**
 * **w3schools**
 * **stackover flow**
+* **medium**
 
 ### what should the game look like
  ### **image header 1**
@@ -39,7 +40,7 @@
 
 ***
 ### *credit*
-[github](https://github.com/jamsaeed/u1_hw_markdown?tab=readme-ov-file)
+[github](https://github.com/SEB-X-Bahrain/class_wiki)
 
 [w3schools](https://www.w3schools.com/)
 
