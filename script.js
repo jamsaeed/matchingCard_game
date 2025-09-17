@@ -4,11 +4,11 @@
 // console.log(matchingCards)
 
 let score = 0
-let timer = 0
+let timer = 60
 let firstCard = null
 let secondCard = null
 let gameBoard = false
-const rePlay = document.getElementById("play-button")
+const rePlay = document.querySelector(".play-button")
 let gameContainer = document.querySelector(".game-container")
 let timeDisplay = document.querySelector(".counting-time")
 let scoreDisplay = document.querySelector(".cards-score")
@@ -44,28 +44,47 @@ for (let i = 0; i < memoryCard.length; i++) {
   gameContainer.appendChild(container)
   container.appendChild(img)
   cards.push(img)
-  cards.sort(() => Math.random() - 0.5)
+  cards.sort(() => Math.random())
+  // cards.sort(() => Math.random() - 0.5)
   //random .sort(() => Math.random() - 0.5)
 
   cards[i].addEventListener("click", () => {
     img.setAttribute("src", `${memoryCard[i]}`)
     console.log("clicked")
-  })
-  //if statement
-  flippedCards.push(img)
+    flippedCards.push(img)
 
-  if (flippedCards.length === 2) {
-    if (flippedCards[0].src === flippedCards[1].src) {
-      //score += 10
-    } else {
-      flippedCards[0].setAttribute("src", "./images/backimage.jpeg")
-      flippedCards[1].setAttribute("src", "./images/backimage.jpeg")
+    if (flippedCards.length === 2) {
+      console.log(flippedCards)
+      if (flippedCards[0].src === flippedCards[1].src) {
+        score += 10
+        scoreDisplay.innerText = score
+      } else {
+        flippedCards[0].setAttribute("src", "./images/backimage.jpeg")
+        flippedCards[1].setAttribute("src", "./images/backimage.jpeg")
+      }
+      console.log("flippedCards after", flippedCards)
+      flippedCards = []
     }
-    // reset for next turn make the array empty
-  }
+  })
 }
 
-//  document.getElementById("play-button").reset()
+const downCount = () => {
+  if (timer === 0) {
+    // console.log("!")
+  } else {
+    timeDisplay.innerText = timer
+    timer--
+  }
+}
+let timeDown = setInterval(downCount, 1000)
+
+const reSet = () => {
+  clearInterval(timeDown)
+  setInterval(downCount, 1000)
+  timer = 60
+}
+rePlay.addEventListener("click", reSet)
+// console.log("reset")
 // console.log(cards)
 // console.log(gameContainer)
 // console.log(cards.length)
