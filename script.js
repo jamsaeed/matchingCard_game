@@ -8,7 +8,9 @@ let timer = 60
 let firstCard = null
 let secondCard = null
 let gameBoard = false
-const rePlay = document.querySelector(".play-button")
+let rePlay = document.querySelector(".play-button")
+console.log(rePlay)
+
 let gameContainer = document.querySelector(".game-container")
 let timeDisplay = document.querySelector(".counting-time")
 let scoreDisplay = document.querySelector(".cards-score")
@@ -33,23 +35,24 @@ const memoryCard = [
   "./images/image4.jpeg",
 ]
 
+//making a new function for shuffling cards.
+
 let cards = []
 let flippedCards = []
-for (let i = 0; i < memoryCard.length; i++) {
+const shuffleCards = memoryCard.sort(() => Math.random() - 0.5)
+
+for (let i = 0; i < shuffleCards.length; i++) {
   const container = document.createElement("div")
   container.classList.add("cards")
   const img = document.createElement("img")
   img.setAttribute("src", `./images/backimage.jpeg`)
-  // img.setAttribute("src", `${memoryCard[i]}`)
   gameContainer.appendChild(container)
   container.appendChild(img)
   cards.push(img)
-  // cards.sort(() => Math.random())
-  // cards.sort(() => Math.random() - 0.5)
-  //random .sort(() => Math.random() - 0.5)
 
   cards[i].addEventListener("click", () => {
-    img.setAttribute("src", `${memoryCard[i]}`)
+    img.setAttribute("src", `${shuffleCards[i]}`)
+
     console.log("clicked")
     flippedCards.push(img)
 
@@ -58,14 +61,16 @@ for (let i = 0; i < memoryCard.length; i++) {
       if (flippedCards[0].src === flippedCards[1].src) {
         score += 10
         scoreDisplay.innerText = score
+        flippedCards = []
       } else {
+        const [card0, card1] = flippedCards
         setTimeout(() => {
-          flippedCards[0].setAttribute("src", "./images/backimage.jpeg")
-          flippedCards[1].setAttribute("src", "./images/backimage.jpeg")
-        }, 100)
+          card0.setAttribute("src", "./images/backimage.jpeg")
+          card1.setAttribute("src", "./images/backimage.jpeg")
+        }, 500)
+        flippedCards = []
       }
       console.log("flippedCards after", flippedCards)
-      flippedCards = []
     }
   })
 }
@@ -85,8 +90,21 @@ const reSet = () => {
   setInterval(downCount, 1000)
   timer = 60
 }
-rePlay.addEventListener("click", reSet)
-// console.log("reset")
-// console.log(cards)
-// console.log(gameContainer)
-// console.log(cards.length)
+
+const playAgain = () => {
+  rePlay.addEventListener("click", () => {
+    reSet()
+    score = 0
+    scoreDisplay.innerText = score
+  })
+
+  //flip the cards back
+  // shuffle cards ??=> const shuffleCards = memoryCard.sort(() => Math.random() - 0.5)
+}
+
+// rePlay.addEventListener("click", () => {
+//   reSet()
+//   score = 0
+//   scoreDisplay.innerText = score
+//   // call function playAgain ()
+// })
