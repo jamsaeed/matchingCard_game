@@ -18,7 +18,7 @@
 * **style.css**
 * **javascript**
 * **googlefonts**
-*
+
 ### resources
 * **mdn**
 * **w3schools**
@@ -26,7 +26,10 @@
 
 ### what should the game look like
  ### **image header 1**
-![game-final-result](./images/final%20look%20(2).png)
+![game-final-result](./images/game%20final%20result.jpeg)
+
+### Game's final look
+[memorycardgame](http://127.0.0.1:5500/game.html)
 
 ### ***Task List***
 - [x] 2 htmls
