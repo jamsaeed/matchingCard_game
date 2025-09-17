@@ -90,6 +90,14 @@ const reSet = () => {
   setInterval(downCount, 1000)
   timer = 60
 }
+//
+
+const reLoad = () => {
+  let button = document.querySelector(".play-button")
+  if (button) {
+    document.location.reload()
+  }
+}
 
 rePlay.addEventListener("click", () => {
   reSet()
