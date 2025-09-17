@@ -44,7 +44,7 @@ for (let i = 0; i < memoryCard.length; i++) {
   gameContainer.appendChild(container)
   container.appendChild(img)
   cards.push(img)
-  cards.sort(() => Math.random())
+  // cards.sort(() => Math.random())
   // cards.sort(() => Math.random() - 0.5)
   //random .sort(() => Math.random() - 0.5)
 
@@ -59,8 +59,10 @@ for (let i = 0; i < memoryCard.length; i++) {
         score += 10
         scoreDisplay.innerText = score
       } else {
-        flippedCards[0].setAttribute("src", "./images/backimage.jpeg")
-        flippedCards[1].setAttribute("src", "./images/backimage.jpeg")
+        setTimeout(() => {
+          flippedCards[0].setAttribute("src", "./images/backimage.jpeg")
+          flippedCards[1].setAttribute("src", "./images/backimage.jpeg")
+        }, 100)
       }
       console.log("flippedCards after", flippedCards)
       flippedCards = []
